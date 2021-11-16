@@ -42,6 +42,12 @@
 			font-size:1.5em;
 			margin: 1em 0;
 		}
+		#formName.modal {
+			background:  #fff;
+			position: absolute;
+			top: 0;
+			z-index: 1000;
+		}
 		#covpassfake {
 			display: block;
 		}
@@ -51,8 +57,27 @@
 			}
 		}
 	</style>
+	<script type="text/javascript">
+		function saveName() {
+			let name = document.getElementById('inputName').value;
+			name = (''+name).trim();
+			localStorage.setItem('name', name);
+			showName();
+		}
+		function showName() {
+			let isStandalone = (window.navigator.standalone === true) || (window.matchMedia('(display-mode: standalone)').matches);
+
+			let name = localStorage.getItem('name');
+			if (name) {
+				document.getElementById('outputName').innerText = name;
+				document.getElementById('formName').classList.remove('modal');
+			} else {
+				if (isStandalone) document.getElementById('formName').classList.add('modal');
+			}
+		}
+	</script>
 </head>
-<body>
+<body onload="showName()">
 	<div id="covpassfake" style="">
 		<!--<img src="screenshot.jpg" style="position:absolute;top:-12vw;width:100%;opacity:0.3;z-index:1000">-->
 		<div style="height:100vh;position:relative;padding:5.5vmin;font-size:4vmin;box-sizing:border-box;">
@@ -68,7 +93,7 @@
 					<img src="assets/qr.png" style="width:100%;margin-bottom:3vmin;">
 					Dieser QR-Code lässt sich verlässlich mit der CovPassCheck-App prüfen.
 				</div>
-				<p id="name" style="font-size:7.6vmin;">Peter Lustig</p>
+				<p id="outputName" style="font-size:7.6vmin;">Peter Lustig</p>
 				<p style="margin-top:3vmin;">Zertifikat anzeigen: &nbsp; &#x276F;</p>
 			</div>
 			<div style="position:absolute;bottom:3vmin;left:0;right:0;text-align:center;">
@@ -85,24 +110,24 @@
 			<h2>2. Scannen Sie damit den QR&#8209;Code der Kunden.</h2>
 			<h2>3. Gleichen Sie Namen und Geburtstag der Kunden mit dem Personalausweis ab.</h2>
 		</div>
+		<div class="article modal" id="formName">
+			Hier kannst du deinen Namen anpassen (er wird nur lokal auf deinem Telefon gespeichert):<br>
+			<input id="inputName" type="text" placeholder="Vorname Nachname"> <input type="button" value="speichern" onclick="saveName()">
+		</div>
 	</div>
 	<div class="article">
 		<h1>Impfzertifikate richtig prüfen</h1>
 		<p>Mehr und mehr Restaurants, Bars, Friseure … in Deutschland müssen Impfzertifikate überprüfen, aber viele Betreiber*innen prüfen die Zertifikate nicht richtig. Das liegt sicherlich daran, dass viele sich mit der neuen Technologie nicht richtig auskennen und sie vielleicht auch nie richtig erklärt bekommen haben.</p>
 		<p>Um den Betreiber*innen das richtige Prüfen erklären zu können, gibt es diesen Artikel.</p>
 	Und so funktioniert es:</p>
-		<p>1. Öffnen diesen Artikel auf deinem Smartphone</p>
-		<p>
-			2. Gib deinen Namen ein (er wird nur lokal auf deinem Telefon gespeichert):<br>
-			<input id="name" type="text" placeholder="Vorname Nachname">
-		</p>
-		<p>3. Füge diese Seite zu deinem Home-Bildschirm hinzu</p>
+		<p>1. Öffnen diesen Artikel auf deinem Smartphone.</p>
+		<p>2. Füge diese Seite zu deinem Home-Bildschirm hinzu.</p>
 		<p style="font-size:0.8em; padding: 0 5vmin; color:#888">
 			iPhone: Tippe unten zentral auf das quadratische Icon mit dem Pfeil, wähle den Punkt "Zum Home-Bildschirm" und auf "Hinzufügen".<br>
 			Android: Tippe auf die drei Punkte rechts oben und wähle die Punkt "Zum Startbildschirm" hinzufügen.
 		</p>
 		<p>
-			Wenn du jetzt auf deinem Home-Bildschirm die neue App startest, öffnet sich eine Fake-CovPass-App mit deinem Namen und einem falschen QR-Code.<br>
+			3. Wenn du jetzt auf deinem Home-Bildschirm die neue App startest, öffnet sich eine Fake-CovPass-App mit deinem Namen und einem falschen QR-Code.<br>
 			Wenn du das nächste mal in einem Geschäft bist, das die Impfzertifikate nicht richtig überprüft, kannst du einfach diese App zeigen. Wenn das Personal das akzeptiert, kannst du in der App nach unten scrollen, um zu zeigen, dass das Personal gerade auf eine Fälschung reingefallen ist. Dazu erscheint auch eine Anleitung, wie man Impfzertifikate richtig überprüft.
 		</p>
 	</div>
