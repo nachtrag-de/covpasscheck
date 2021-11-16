@@ -23,13 +23,12 @@
 			background: #fff;
 			font-family: sans-serif;
 		}
-		p {
-			margin: 0;
-		}
 		.article {
 			margin: 0 0 20vh;
 			padding: 5vmin;
 			font-size: 5vmin;
+			margin: auto;
+			max-width: 600px;
 		}
 		.article p {
 			margin: 0.5em 0;
@@ -67,6 +66,8 @@
 		function showName() {
 			let isStandalone = (window.navigator.standalone === true) || (window.matchMedia('(display-mode: standalone)').matches);
 
+			if (isStandalone) document.getElementById('covpassfake').style.display = 'block';
+
 			let name = localStorage.getItem('name');
 			if (name) {
 				document.getElementById('outputName').innerText = name;
@@ -93,8 +94,8 @@
 					<img src="assets/qr.png" style="width:100%;margin-bottom:3vmin;">
 					Dieser QR-Code lässt sich verlässlich mit der CovPassCheck-App prüfen.
 				</div>
-				<p id="outputName" style="font-size:7.6vmin;">Peter Lustig</p>
-				<p style="margin-top:3vmin;">Zertifikat anzeigen: &nbsp; &#x276F;</p>
+				<div id="outputName" style="font-size:7.6vmin;">Peter Lustig</div>
+				<div style="margin-top:3vmin;">Zertifikat anzeigen: &nbsp; &#x276F;</div>
 			</div>
 			<div style="position:absolute;bottom:3vmin;left:0;right:0;text-align:center;">
 				<div style="display:inline-block;background:#055fc4;text-align:center;width:14vmin;height:14vmin;padding-top:3vmin;border-radius:30vmin;box-sizing:border-box;">
