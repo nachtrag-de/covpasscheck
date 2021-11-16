@@ -18,7 +18,7 @@
 	<title>nachtrag.de - covpasscheck</title>
 	<style type="text/css">
 		body, html {
-			margin: 0;x
+			margin: 0;
 			padding: 0;
 			background: #fff;
 			font-family: sans-serif;
@@ -26,25 +26,41 @@
 		html {
 			height: 100vh;
 		}
+		p {
+			margin: 0;
+		}
 		#covpassfake {
-			color: #055fc4;
-			font-size: 5px;
-			padding: 7px;
+			
 		}
 	</style>
 </head>
 <body>
-	<img src="screenshot.jpg" style="position: fixed;top: -12vw;width: 100%;opacity:0.5;z-index:1000">
-	<div id="covpassfake" style="position:relative;">
-		<div style="padding:1px">Gültigkeit prüfen &nbsp; &#x276F;</div>
-		<img src="assets/circle.png" width="8" height="8" style="position:absolute; top:5px; right:11px">
-		<div style="background: #055fc4;border-radius: 8px;padding: 8px;color:#fff;margin-top:7px;box-sizing: border-box;position: relative;">
-			<img src="assets/check.png" width="7" style="position:absolute;">
-			<div style="margin: 0px 0px 0px 10px;">
-				<b>Impfzertifikat</b><br>
-				Vollständig seit 09.09.2021
+	<div id="covpassfake" style="">
+		<img src="screenshot.jpg" style="position:absolute;top:-12vw;width:100%;opacity:0.3;z-index:1000">
+		<div style="height:100vh;position:relative;padding:5.5vmin;font-size:1.3vmin;box-sizing:border-box;">
+			<div style="padding:1vmin;color:#055fc4;">Gültigkeit prüfen &nbsp; &#x276F;</div>
+			<img src="assets/circle.png" style="position:absolute;width:6vmin;height:6vmin;top:4vmin;right:9vmin">
+			<div style="background:#055fc4;border-radius:7vmin;padding:10vmin 7.5vmin;color:#fff;margin-top:5vmin;box-sizing:border-box;position:absolute;left:5.5vmin;right:5.5vmin;top:12vmin;bottom:23vmin">
+				<img src="assets/check.png" style="margin:0.6vmin 0 0 0.8vmin;width:5.5vmin;position:absolute;">
+				<div style="margin:0vmin 0 0 10vmin;">
+					<b style="font-size:1.75vmin;">Impfzertifikat</b><br>
+					Vollständig seit 09.09.2021
+				</div>
+				<div style="background:#fff;color:#000;font-size:1.11vmin;padding:5vmin;margin:4vmin 0 6vmin;box-sizing:border-box;border-radius:3vmin">
+					<img src="assets/qr.png" style="width:100%;margin-bottom:3vmin;">
+					Dieser QR-Code lässt sich verlässlich mit der CovPassCheck-App prüfen.
+				</div>
+				<p id="name" style="font-size:2.54vmin;">Michael Kreil</p>
+				<p style="margin-top:3vmin;">Zertifikat anzeigen: &nbsp; &#x276F;</p>
 			</div>
-			<br><br><br>
+			<div style="position:absolute;bottom:3vmin;left:0;right:0;text-align:center;">
+				<div style="display:inline-block;background:#055fc4;text-align:center;width:15vmin;height:15vmin;padding-top:4vmin;border-radius:30vmin;box-sizing:border-box;">
+					<span style="color:#fff;font-size:2vmin">+</span>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h1>Sie sind gerade auf einen gefälschten Code reingefallen!</h1>
 		</div>
 	</div>
 	<h1>Hallo Welt</h1>
