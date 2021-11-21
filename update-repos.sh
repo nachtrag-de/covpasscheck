@@ -1,21 +1,21 @@
 #!/bin/bash
 
+set -e
+set -x
+
 dir="$(dirname "$0")"
 cd "${dir}"
-
-set -e
 
 function update() {
 	repo="$1"
 
-	cd "${dir}"
-	cd "../${repo}"
+	cd "$(dirname "${dir}")/${repo}"
 
 	git pull
 	cd "${dir}"
 	mkdir "docs/${repo}/"
 
-	rsync --delete "../${repo}/docs/" "docs/${repo}/"
+	rsync -r --delete "../${repo}/docs/" "docs/${repo}/"
 }
 
 update "covpassfake"
