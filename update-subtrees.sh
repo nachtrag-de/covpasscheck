@@ -16,9 +16,10 @@ function update() {
 	else
 		echo "   - add remote"
 		git remote add "${remote}" "git@github.com:nachtrag-de/${repo}.git"
-		echo "   - add subtree"
-		git subtree add -P "docs/${repo}" "${remote}" main
 	fi
+
+	echo "   - add subtree"
+	git subtree add -P "docs/${repo}" "${remote}" main
 
 	echo "   - pull"
 	git subtree pull -P "docs/${repo}" "${remote}" main
