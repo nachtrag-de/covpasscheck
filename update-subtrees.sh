@@ -26,7 +26,12 @@ function update() {
 	echo "   finished"
 }
 
+if [[ $(git status --porcelain=v1 2> /dev/null) ]]; then
+	echo "ERROR: git has changes"
+	exit
+fi
+
 update "covpassfake"
 
-#git remote add covpassfake	git@github.com:nachtrag-de/covpassfake.git
-#git subtree add -P docs/covpassfake covpassfake main
+# git remote add covpassfake	git@github.com:nachtrag-de/covpassfake.git
+# git subtree add -P docs/covpassfake covpassfake main
