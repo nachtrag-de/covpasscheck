@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta name="theme-color" content="white">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	
+	<link rel="shortcut icon" href="assets/icon.png">
+
+	<meta name="apple-mobile-web-app-title" content="CovPassFake">
+	<link rel="apple-touch-icon" href="assets/icon.png">
+
+	<title>nachtrag.de - covpasscheck</title>
+	<style type="text/css">
+		body, html {
+			margin: 0;
+			padding: 0;
+			background: #fff;
+			font-family: sans-serif;
+		}
+		.article {
+			margin: 0 0 20vh;
+			padding: 5vmin;
+			font-size: 5vmin;
+			margin: auto;
+			max-width: 600px;
+		}
+		.article p {
+			margin: 0.5em 0;
+		}
+		.article h1 {
+			font-size:2em;
+			margin: 1em 0;
+		}
+		.article h2 {
+			font-size:1.5em;
+			margin: 1em 0;
+		}
+		#formName.modal {
+			background:  #fff;
+			position: absolute;
+			top: 0;
+			z-index: 1000;
+		}
+		#covpassfake {
+			display: none;
+		}
+		@media all and (display-mode: standalone) {
+			#covpassfake {
+				display: block;
+			}
+		}
+	</style>
+	<script type="text/javascript">
+		function saveName() {
+			let name = document.getElementById('inputName').value;
+			name = (''+name).trim();
+			localStorage.setItem('name', name);
+			showName();
+		}
+		function showName() {
+			let isStandalone = (window.navigator.standalone === true) || (window.matchMedia('(display-mode: standalone)').matches);
+
+			if (isStandalone) document.getElementById('covpassfake').style.display = 'block';
+
+			let name = localStorage.getItem('name');
+			if (name) {
+				document.getElementById('outputName').innerText = name;
+				document.getElementById('formName').classList.remove('modal');
+			} else {
+				if (isStandalone) document.getElementById('formName').classList.add('modal');
+			}
+		}
+	</script>
+</head>
+<body onload="showName()">
+	<div id="covpassfake" style="margin-bottom: 20vh;">
+		<!--<img src="screenshot.jpg" style="position:absolute;top:-12vw;width:100%;opacity:0.3;z-index:1000">-->
+		<div style="height:100vh;position:relative;padding:5.5vmin;font-size:4vmin;box-sizing:border-box;">
+			<div style="padding:1vmin;color:#055fc4;">Gültigkeit prüfen &nbsp; &#x276F;</div>
+			<img src="assets/circle.png" style="position:absolute;width:6vmin;height:6vmin;top:4vmin;right:9vmin">
+			<div style="background:#055fc4;border-radius:7vmin;padding:10vmin 7.5vmin;color:#fff;margin-top:5vmin;box-sizing:border-box;position:absolute;left:5.5vmin;right:5.5vmin;top:12vmin;bottom:23vmin">
+				<img src="assets/check.png" style="margin:0.6vmin 0 0 0.8vmin;width:5.5vmin;position:absolute;">
+				<div style="margin:0vmin 0 0 10vmin;">
+					<b style="font-size:5.2vmin;">Impfzertifikat</b><br>
+					Vollständig seit 09.09.2021
+				</div>
+				<div style="background:#fff;color:#000;font-size:3.1vmin;padding:5vmin;margin:3vmin 0 6vmin;box-sizing:border-box;border-radius:3vmin">
+					<img src="assets/qr.png" style="width:100%;margin-bottom:3vmin;">
+					Dieser QR-Code lässt sich verlässlich mit der CovPassCheck-App prüfen.
+				</div>
+				<div id="outputName" style="font-size:7.6vmin;">Peter Lustig</div>
+				<div style="margin-top:3vmin;">Zertifikat anzeigen: &nbsp; &#x276F;</div>
+			</div>
+			<div style="position:absolute;bottom:3vmin;left:0;right:0;text-align:center;">
+				<div style="display:inline-block;background:#055fc4;text-align:center;width:14vmin;height:14vmin;padding-top:3vmin;border-radius:30vmin;box-sizing:border-box;">
+					<span style="color:#fff;font-size:6vmin;">+</span>
+				</div>
+			</div>
+		</div>
+		<div class="article" style="margin-top: 20vh">
+			<h2>Sie sind auf ein gefälschtes Zertifikat reingefallen!</h2>
+			<p>Was Sie tun müssen:</p>
+			<h2>1. Installieren Sie die CovPass&#8209;Check&#8209;App.</h2>
+			<p style="text-align:center;"><img src="assets/app_icons.png" style="width:60vw"></p>
+			<h2>2. Scannen Sie damit den QR&#8209;Code der Kunden.</h2>
+			<h2>3. Gleichen Sie Namen und Geburtstag der Kunden mit dem Personalausweis ab.</h2>
+		</div>
+		<div class="article modal" id="formName">
+			Hier kannst du deinen Namen anpassen (er wird nur lokal auf deinem Telefon gespeichert):<br>
+			<input id="inputName" type="text" placeholder="Vorname Nachname"> <input type="button" value="speichern" onclick="saveName()">
+		</div>
+	</div>
+	<div class="article">
+		<h1>Impfzertifikate richtig prüfen</h1>
+		<p>Mehr und mehr Restaurants, Bars, Friseure … in Deutschland müssen Impfzertifikate überprüfen, aber viele Betreiber*innen prüfen die Zertifikate nicht richtig. Das liegt sicherlich daran, dass viele sich mit der neuen Technologie nicht richtig auskennen und sie vielleicht auch nie richtig erklärt bekommen haben.</p>
+		<p>Um den Betreiber*innen das richtige Prüfen erklären zu können, gibt es diesen Artikel.</p>
+	Und so funktioniert es:</p>
+		<p>1. Öffnen diesen Artikel auf deinem Smartphone.</p>
+		<p>2. Füge diese Seite zu deinem Home-Bildschirm hinzu.</p>
+		<p style="font-size:0.8em; padding: 0 5vmin; color:#888">
+			iPhone: Tippe unten zentral auf das quadratische Icon mit dem Pfeil, wähle den Punkt "Zum Home-Bildschirm" und auf "Hinzufügen".<br>
+			Android: Tippe auf die drei Punkte rechts oben und wähle die Punkt "Zum Startbildschirm" hinzufügen.
+		</p>
+		<p>
+			3. Wenn du jetzt auf deinem Home-Bildschirm die neue App startest, öffnet sich eine Fake-CovPass-App mit deinem Namen und einem falschen QR-Code.<br>
+			Wenn du das nächste mal in einem Geschäft bist, das die Impfzertifikate nicht richtig überprüft, kannst du einfach diese App zeigen. Wenn das Personal das akzeptiert, kannst du in der App nach unten scrollen, um zu zeigen, dass das Personal gerade auf eine Fälschung reingefallen ist. Dazu erscheint auch eine Anleitung, wie man Impfzertifikate richtig überprüft.
+		</p>
+	</div>
+	<div class="article">
+		Code auf <a href="https://github.com/nachtrag-de/nachtrag.de/tree/main/docs/covpasscheck">GitHub</a>
+	</div>
+</body>
+</html>

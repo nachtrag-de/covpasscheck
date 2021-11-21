@@ -3,7 +3,7 @@
 set -e
 set -x
 
-dir="$(dirname "$0")"
+dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 cd "${dir}"
 
 function update() {
