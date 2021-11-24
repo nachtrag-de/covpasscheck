@@ -1,0 +1,22 @@
+{
+	"name": "CovPassFake",
+	"short_name": "CovPassFake",
+	"start_url": ".",
+	"display": "standalone",
+	"background_color" : "#fff" ,
+	"description": "Fake CovPass App",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "assets/icon.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"related_applications": [
+		{
+			"platform": "webapp",
+			"url":"https://nachtrag.de/covpassfake"
+		}
+	]
+}
