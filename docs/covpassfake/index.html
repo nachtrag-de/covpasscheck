@@ -4,6 +4,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=400, user-scalable=no">
 
+	<meta property="og:title" content="nachtrag.de - CovPassFake" />
+	<meta property="og:type" content="article" />
+	<meta property="og:description" content="Restaurants dazu bringen, Impfzertifikate richtig zu prüfen." />
+	<meta property="og:url" content="https://nachtrag.de/covpassfake" />
+	<meta property="og:image" content="https://nachtrag.de/covpassfake/assets/header.png" />
+
+	<meta name="twitter:title" content="nachtrag.de - CovPassFake" />
+	<meta name="twitter:description" content="Restaurants dazu bringen, Impfzertifikate richtig zu prüfen." />
+	<meta name="twitter:image" content="https://nachtrag.de/covpassfake/assets/header.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -98,7 +109,7 @@
 		}
 		function showName() {
 			let isStandalone = (window.navigator.standalone === true) || (window.matchMedia('(display-mode: standalone)').matches);
-			//isStandalone = true;
+			isStandalone = true;
 
 			if (isStandalone) document.getElementById('covpassfake').style.display = 'block';
 
@@ -142,7 +153,7 @@
 			</div>
 		</div>
 		<div class="article" style="margin: 20vh auto; min-height:100vh;">
-			<h1 style="color:#800">Sie sind auf ein gefälschtes Impf&#8209;Zertifikat reingefallen!</h1>
+			<h1 style="color:#800">Sie sind auf ein falsches Impfzertifikat reingefallen!</h1>
 			<p>Was Sie tun müssen:</p>
 			<h2>1. Installieren Sie die CovPass&#8209;Check&#8209;App.</h2>
 			<p style="text-align:center;"><img src="assets/app_icons.png" style="width:80%"></p>
@@ -156,8 +167,9 @@
 	</div>
 	<div class="article">
 		<h1>Impfzertifikate richtig&nbsp;prüfen</h1>
-		<p>Restaurants, Bars, Friseure usw. sollten eigentlich die Impfzertifikate ihrer Kund*innen überprüfen, tun es aber nicht richtig.</p>
-		<p>Es genügt nicht, einen flüchtigen Blick auf das Handy zu werfen. Betreiber*innen müssen den QR-Code mit der <a href="https://www.digitaler-impfnachweis-app.de/covpasscheck-app/">CovPassCheck-App</a> scannen und den Namen in der Check-App mit dem Personalausweis/Führerschein abgleichen. Wer das nicht tut, läuft Gefahr, von Impfverweigerern systematisch hinters Licht geführt zu werden und Menschenleben zu gefährden.</p>
+		<p style="text-align: center;"><img src="assets/header.jpg" width="100%"></p>
+		<p>Die vierte Corona-Welle überrollt uns mit voller Wucht, aber nicht alle nehmen das Thema wirklich ernst: Restaurants, Bars, Friseure und andere Einrichtungen sollten eigentlich die Impfzertifikate ihrer Kund*innen überprüfen, doch tun es nicht richtig.</p>
+		<p>Es genügt nicht, einen flüchtigen Blick auf das Handy zu werfen. Betreiber*innen müssen den QR-Code mit der <a href="https://www.digitaler-impfnachweis-app.de/covpasscheck-app/">CovPassCheck-App</a> scannen und den Namen in der Check-App mit dem Personalausweis/Führerschein abgleichen. Wer das nicht tut, läuft Gefahr, von Impfverweigerern hinters Licht geführt zu werden und Menschenleben zu gefährden.</p>
 		<p>Um den Betreiber*innen einfach und eindrücklich zu erklären, wie man die digitalen Impfzertifikate richtig überprüft, gibt es diesen Artikel. Und so funktioniert es:</p>
 		<p><b>1. Öffnen diesen Artikel auf deinem Smartphone.</b></p>
 		<p><b>2. Füge diese Seite zu deinem Home-Bildschirm hinzu.</b></p>
@@ -167,11 +179,11 @@
 		</p>
 		<p><b>3. Wenn du jetzt auf deinem Home-Bildschirm die neue App startest, öffnet sich eine Fake-CovPass-App mit deinem Namen und einem falschen QR-Code.</b></p>
 		</p>
-			Wenn du das nächste mal in einem Restaurant bist, zeige einfach die Fake-Covpass-App vor. Wenn das Personal mit einem kurzen Blick auf dein Handy das Impfzertifikat akzeptiert, kannst du in der App einfach nach unten scrollen, um zu zeigen, dass das Personal gerade auf eine Fälschung reingefallen ist. Dazu erscheint auch eine Kurzanleitung, die erklärt, wie man Impfzertifikate richtig überprüft.
+			Wenn du das nächste mal in einem Restaurant bist, zeige einfach die Fake-Covpass-App vor. Wenn das Personal mit einem kurzen Blick auf dein Handy das Impfzertifikat akzeptiert, kannst du in der App einfach scrollen, um zu zeigen, dass das Personal gerade auf eine Fälschung reingefallen ist. Dazu erscheint auch eine Kurzanleitung, die erklärt, wie man Impfzertifikate richtig überprüft.
 		</p>
 	</div>
 	<div class="article footer">
-		Verbessere den <a href="https://github.com/nachtrag-de/covpassfake">Code auf GitHub</a> oder schicke Fragen/Anregungen an <a href="mailto:covpassfake@michael-kreil.de">covpassfake@michael-kreil.de</a>.
+		Bitte helfe mit, den <a href="https://github.com/nachtrag-de/covpassfake">Code auf GitHub</a> zu verbessern. Insbesondere gibt es noch Probleme mit manchen Browsern auf Android. Fragen und Anregungen können per E-Mail geschickt werden an: <a href="mailto:covpassfake@michael-kreil.de">covpassfake@michael-kreil.de</a>.
 	</div>
 </body>
 </html>
